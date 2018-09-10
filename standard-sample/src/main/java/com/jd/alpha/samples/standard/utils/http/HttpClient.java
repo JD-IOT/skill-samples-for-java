@@ -388,7 +388,7 @@ public class HttpClient {
      */
     private RequestBody buildRequestBody(Map<String, Object> params) {
         FormBody.Builder builder = new FormBody.Builder();
-        if (params != null) { // 只需判断是否为空，size=0 for循环不会走，降低耦合
+        if (params != null) {
             params.forEach((key, value) -> builder.add(key, String.valueOf(value)));
         }
         return builder.build();
